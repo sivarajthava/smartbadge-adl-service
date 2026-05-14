@@ -1,0 +1,13 @@
+spring:
+  data:
+    mongodb:
+      auto-index-creation: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: false
+
+logging:
+  level:
+    com.smartbadge.adl: DEBUG
