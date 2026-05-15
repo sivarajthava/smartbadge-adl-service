@@ -1,0 +1,12 @@
+package com.smartbadge.adl.preference;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data @Builder @NoArgsConstructor @AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Widget {
+    private String widgetId, actionId, title, subTitle, displayOrder;
+}

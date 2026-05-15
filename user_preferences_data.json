@@ -1,0 +1,46 @@
+{
+  "success": true,
+  "userId": "345351",
+  "userName": "TestUser",
+  "widgets": [
+    {
+      "widgetId": "21",
+      "actionId": "001",
+      "title": "Add Dependant",
+      "subTitle": "Family Insurance Coverage",
+      "displayOrder": 1
+    },
+    {
+      "widgetId": "22",
+      "actionId": "002",
+      "title": "Add Bank Details",
+      "subTitle": "Required for Payroll Setup",
+      "displayOrder": 2
+    }
+  ],
+  "quickActions": [
+    {
+      "actionId": "001",
+      "title": "Timesheet",
+      "subTitle": "Submit your timesheet",
+      "displayOrder": 1
+    },
+    {
+      "actionId": "002",
+      "title": "Request Leave",
+      "subTitle": "Apply for leave",
+      "displayOrder": 2
+    }
+  ],
+  "meta": {
+    "createdAt": "2023-09-07T10:09:00.000Z",
+    "updatedAt": "2023-09-07T10:09:00.000Z"
+  },
+  "preferences": {
+    "currency": "KWD",
+    "language": "en",
+    "timezone": "Asia/Dubai",
+    "dateFormat": "dd-MM-yyyy"
+  },
+  "facetScore": "0.785498000"
+}

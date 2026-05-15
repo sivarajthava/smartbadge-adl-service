@@ -1,0 +1,75 @@
+{
+	"error": null,
+	"success": true,
+	"data": {
+		"staffId": "S4861934",
+		"name": "Sivaraj Thavamani",
+		"email": "stsivaraj@gmail.com",
+		"title": "MR",
+		"jobTitle": "Senior Software Engineer",
+		"grade": "IT.07",
+		"businessCardType": "EMIRATES",
+		"address": [
+			{
+				"address": "RESIDENCE",
+				"street": "1st street",
+				"city": "Pisanathur",
+				"country": "India",
+				"addressType": "RESIDENCE"
+			},
+			{
+				"address": "CURRENT",
+				"street": "Doha Street",
+				"city": "Dubai",
+				"country": "UAE",
+				"addressType": "CURRENT"
+			}
+		],
+		"leaveDocumentDto": {
+			"leaveBalance": 3,
+			"staffId": "S4861934",
+			"leaves": [
+				{
+					"referenceId": "LEV-REQ-1778668787173",
+					"leaveType": "ANNUAL_LEAVE",
+					"leaveStatus": "APPROVED",
+					"fromDate": "23/05/2026",
+					"toDate": "24/05/2026",
+					"reason": "EID Holiday"
+				},
+				{
+					"referenceId": "LEV-REQ-1778619360977",
+					"leaveType": "SICK_LEAVE",
+					"leaveStatus": "APPROVED",
+					"fromDate": "14/05/2026",
+					"toDate": "14/05/2026",
+					"reason": "Login is torturing",
+					"comments": "Enjoy your meals"
+				}
+			]
+		},
+		"teamMembers": {
+			"staffId": "S4861934",
+			"teamMembers": [
+				{
+					"staffId": "E486223",
+					"name": "Sigam Logan",
+					"status": "ACTIVE",
+					"role": "Lead"
+				},
+				{
+					"staffId": "E5789",
+					"name": "Sivaraj Thavamani",
+					"status": "INACTIVE",
+					"role": "Labour"
+				},
+				{
+					"staffId": "E22222",
+					"name": "Wajeaha",
+					"status": "ACTIVE",
+					"role": "Data Engineer"
+				}
+			]
+		}
+	}
+}
