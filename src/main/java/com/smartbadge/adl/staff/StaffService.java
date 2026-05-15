@@ -11,8 +11,8 @@ import com.smartbadge.adl.team.TeamService;
 
 
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -29,40 +29,52 @@ public class StaffService {
 	private final StaffRepository staffRepository;
 	private final LeaveService leaveService;
 	private final TeamService teamService;
+	private final ModelMapper modelMapper;
 
 	// ── READ ─────────────────────────────────────────────────────────────────
 
 	public Page<StaffDto> findAll(Pageable pageable) {
-		return staffRepository.findAll(pageable).map(this::toDto);
+		log.info("Finding staff page: page={}, size={}", pageable.getPageNumber(), pageable.getPageSize());
+		Page<StaffDto> staffPage = staffRepository.findAll(pageable).map(this::toDto);
+		log.info("Found {} staff records on page {} of {}", staffPage.getNumberOfElements(), staffPage.getNumber(),
+				staffPage.getTotalPages());
+		return staffPage;
 	}
 
 	public StaffDto findByStaffId(String staffId) {
-		return toDto(getOrThrow(staffId));
+		log.info("Finding staff by staffId: {}", staffId);
+		StaffDto dto = toDto(getOrThrow(staffId));
+		log.info("Found staff by staffId: {}", staffId);
+		return dto;
 	}
 
 	public StaffProfileDto getFullProfile(String staffId) {
+		log.info("Building full staff profile for staffId: {}", staffId);
 		Staff staff = getOrThrow(staffId);
 		LeaveDocumentDto leaveDoc = leaveService.findByStaffId(staffId).orElse(null);
 		TeamDocumentDto teamDoc = teamService.findByStaffId(staffId).orElse(null);
-		return toProfileDto(staff, leaveDoc, teamDoc);
+		StaffProfileDto profile = toProfileDto(staff, leaveDoc, teamDoc);
+		log.info("Built full staff profile for staffId: {}, hasLeave={}, hasTeam={}", staffId, leaveDoc != null,
+				teamDoc != null);
+		return profile;
 	}
 
 	// ── CREATE ────────────────────────────────────────────────────────────────
 
 	public StaffDto create(CreateStaffRequest req) {
+		log.info("Creating staff: {}", req.getStaffId());
 		if (staffRepository.existsById(req.getStaffId())) {
+			log.warn("Create staff rejected because staffId already exists: {}", req.getStaffId());
 			throw new DuplicateResourceException("Staff", req.getStaffId());
 		}
 		if (staffRepository.existsByEmail(req.getEmail())) {
+			log.warn("Create staff rejected because email already exists for staffId: {}", req.getStaffId());
 			throw new DuplicateResourceException("Staff (email)", req.getEmail());
 		}
-		Staff staff = Staff.builder().staffId(req.getStaffId()).name(req.getName()).email(req.getEmail())
-				.title(req.getTitle()).jobTitle(req.getJobTitle()).grade(req.getGrade())
-				.businessCardType(req.getBusinessCardType())
-				.addresses(req.getAddresses() != null
-						? req.getAddresses().stream().map(this::toAddress).collect(Collectors.toList())
-						: new ArrayList<>())
-				.build();
+		Staff staff = modelMapper.map(req, Staff.class);
+		if (staff.getAddresses() == null) {
+			staff.setAddresses(new ArrayList<>());
+		}
 		StaffDto dto = toDto(staffRepository.save(staff));
 		log.info("Created staff: {}", staff.getStaffId());
 		return dto;
@@ -71,11 +83,13 @@ public class StaffService {
 	// ── UPDATE ────────────────────────────────────────────────────────────────
 
 	public StaffDto update(String staffId, UpdateStaffRequest req) {
+		log.info("Updating staff: {}", staffId);
 		Staff staff = getOrThrow(staffId);
 		if (req.getName() != null)
 			staff.setName(req.getName());
 		if (req.getEmail() != null) {
 			if (!req.getEmail().equals(staff.getEmail()) && staffRepository.existsByEmail(req.getEmail())) {
+				log.warn("Update staff rejected because email already exists for staffId: {}", staffId);
 				throw new DuplicateResourceException("Staff (email)", req.getEmail());
 			}
 			staff.setEmail(req.getEmail());
@@ -96,6 +110,7 @@ public class StaffService {
 	// ── DELETE ────────────────────────────────────────────────────────────────
 
 	public void delete(String staffId) {
+		log.info("Deleting staff: {}", staffId);
 		Staff staff = getOrThrow(staffId);
 		staffRepository.delete(staff);
 		log.info("Deleted staff: {}", staffId);
@@ -104,19 +119,22 @@ public class StaffService {
 	// ── ADDRESS MANAGEMENT ───────────────────────────────────────────────────
 
 	public StaffDto addAddress(String staffId, AddressDto dto) {
+		log.info("Adding or replacing {} address for staff: {}", dto.getAddressType(), staffId);
 		Staff staff = getOrThrow(staffId);
-		Address address = toAddress(dto);
+		Address address = modelMapper.map(dto, Address.class);
 		staff.getAddresses().removeIf(a -> a.getAddressType() == address.getAddressType());
 		staff.getAddresses().add(address);
 		StaffDto staffDto = toDto(staffRepository.save(staff));
-		log.info("Added or replaced {} address for staff: {}", address.getAddressType(), staffId);
+		log.info("Added or replaced {} address for staff: {}, addressCount={}", address.getAddressType(), staffId,
+				staff.getAddresses().size());
 		return staffDto;
 	}
 
 	public StaffDto updateAddress(String staffId, AddressType addressType, AddressDto dto) {
+		log.info("Updating {} address for staff: {}", addressType, staffId);
 		Staff staff = getOrThrow(staffId);
 		staff.getAddresses().removeIf(a -> a.getAddressType() == addressType);
-		Address updated = toAddress(dto);
+		Address updated = modelMapper.map(dto, Address.class);
 		updated.setAddressType(addressType);
 		staff.getAddresses().add(updated);
 		StaffDto staffDto = toDto(staffRepository.save(staff));
@@ -125,40 +143,32 @@ public class StaffService {
 	}
 
 	public StaffDto removeAddress(String staffId, AddressType addressType) {
+		log.info("Removing {} address for staff: {}", addressType, staffId);
 		Staff staff = getOrThrow(staffId);
-		staff.getAddresses().removeIf(a -> a.getAddressType() == addressType);
+		boolean removed = staff.getAddresses().removeIf(a -> a.getAddressType() == addressType);
 		StaffDto staffDto = toDto(staffRepository.save(staff));
-		log.info("Removed {} address for staff: {}", addressType, staffId);
+		log.info("Removed {} address for staff: {}, removed={}, addressCount={}", addressType, staffId, removed,
+				staff.getAddresses().size());
 		return staffDto;
 	}
 
 	// ── MAPPING ───────────────────────────────────────────────────────────────
 
 	private Staff getOrThrow(String staffId) {
+		log.info("Loading staff document: {}", staffId);
 		return staffRepository.findById(staffId).orElseThrow(() -> new ResourceNotFoundException("Staff", staffId));
 	}
 
 	StaffDto toDto(Staff s) {
-		return StaffDto.builder().staffId(s.getStaffId()).name(s.getName()).email(s.getEmail()).title(s.getTitle())
-				.jobTitle(s.getJobTitle()).grade(s.getGrade()).businessCardType(s.getBusinessCardType())
-				.address(s.getAddresses().stream().map(this::toAddressDto).collect(Collectors.toList())).build();
+		log.trace("Mapping Staff to StaffDto: {}", s.getStaffId());
+		return modelMapper.map(s, StaffDto.class);
 	}
 
 	private StaffProfileDto toProfileDto(Staff s, LeaveDocumentDto leave, TeamDocumentDto team) {
-		return StaffProfileDto.builder().staffId(s.getStaffId()).name(s.getName()).email(s.getEmail())
-				.title(s.getTitle()).jobTitle(s.getJobTitle()).grade(s.getGrade())
-				.businessCardType(s.getBusinessCardType())
-				.address(s.getAddresses().stream().map(this::toAddressDto).collect(Collectors.toList()))
-				.leaveDocumentDto(leave).teamMembers(team).build();
-	}
-
-	private AddressDto toAddressDto(Address a) {
-		return AddressDto.builder().address(a.getAddress()).street(a.getStreet()).city(a.getCity())
-				.country(a.getCountry()).addressType(a.getAddressType()).build();
-	}
-
-	private Address toAddress(AddressDto dto) {
-		return Address.builder().address(dto.getAddress()).street(dto.getStreet()).city(dto.getCity())
-				.country(dto.getCountry()).addressType(dto.getAddressType()).build();
+		log.trace("Mapping Staff to StaffProfileDto: {}", s.getStaffId());
+		StaffProfileDto dto = modelMapper.map(s, StaffProfileDto.class);
+		dto.setLeaveDocumentDto(leave);
+		dto.setTeamMembers(team);
+		return dto;
 	}
 }

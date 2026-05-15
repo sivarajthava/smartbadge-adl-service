@@ -5,11 +5,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @SpringBootApplication
 @EnableMongoAuditing
 @EnableSpringDataWebSupport(pageSerializationMode = EnableSpringDataWebSupport.PageSerializationMode.VIA_DTO)
-public class StaffManagementApplication {
+public class SmartBadgeApplication {
     public static void main(String[] args) {
-        SpringApplication.run(StaffManagementApplication.class, args);
+    	log.info("SmartBadge Application Starting...");
+        SpringApplication.run(SmartBadgeApplication.class, args);
+        log.info("SmartBadge Application Successfully Started...");
     }
 }

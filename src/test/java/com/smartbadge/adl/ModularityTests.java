@@ -13,7 +13,7 @@
 //class ModularityTests {
 //
 //    private final ApplicationModules modules =
-//            ApplicationModules.of(StaffManagementApplication.class);
+//            ApplicationModules.of(SmartBadgeApplication.class);
 //
 //    @Test
 //    void verifiesModularStructure() {

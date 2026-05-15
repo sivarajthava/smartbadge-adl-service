@@ -6,7 +6,7 @@
 //
 //@SpringBootTest
 //@ActiveProfiles("test")
-//class StaffManagementApplicationTests {
+//class SmartBadgeApplicationTests {
 //
 //    @Test
 //    void contextLoads() {

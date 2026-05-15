@@ -1,13 +1,15 @@
 package com.smartbadge.adl.staff;
 
 
+import java.util.List;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.smartbadge.adl.leave.LeaveDocumentDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @Builder
@@ -22,5 +24,6 @@ public class StaffDto {
     private String jobTitle;
     private String grade;
     private BusinessCardType businessCardType;
+    private LeaveDocumentDto leave;
     private List<AddressDto> address;
 }
