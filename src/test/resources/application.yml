@@ -12,3 +12,7 @@ spring:
 logging:
   level:
     com.smartbadge.adl: DEBUG
+
+app:
+  security:
+    enabled: false
