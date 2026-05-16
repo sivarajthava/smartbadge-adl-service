@@ -1,0 +1,24 @@
+{"leaveDocumentDto": {
+			"leaveBalance": 3,
+			"staffId": "S4861934",
+			"leaves": [
+				{
+					"referenceId": "LEV-REQ-1778668787173",
+					"leaveType": "ANNUAL_LEAVE",
+					"leaveStatus": "APPROVED",
+					"fromDate": "23/05/2026",
+					"toDate": "24/05/2026",
+					"reason": "EID Holiday"
+				},
+				{
+					"referenceId": "LEV-REQ-1778619360977",
+					"leaveType": "SICK_LEAVE",
+					"leaveStatus": "APPROVED",
+					"fromDate": "14/05/2026",
+					"toDate": "14/05/2026",
+					"reason": "Login is torturing",
+					"comments": "Enjoy your meals"
+				}
+			]
+		}
+}

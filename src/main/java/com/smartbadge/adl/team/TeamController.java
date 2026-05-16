@@ -1,7 +1,6 @@
 package com.smartbadge.adl.team;
 
 import com.smartbadge.adl.shared.ApiResponse;
-import com.smartbadge.adl.staff.Staff;
 import com.smartbadge.adl.team.dto.AddTeamMemberRequest;
 import com.smartbadge.adl.team.dto.UpdateTeamMemberRequest;
 

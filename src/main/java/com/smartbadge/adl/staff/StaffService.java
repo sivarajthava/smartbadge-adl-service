@@ -1,5 +1,12 @@
 package com.smartbadge.adl.staff;
 
+import java.util.ArrayList;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
+
 import com.smartbadge.adl.leave.LeaveDocumentDto;
 import com.smartbadge.adl.leave.LeaveService;
 import com.smartbadge.adl.shared.exception.DuplicateResourceException;
@@ -8,15 +15,6 @@ import com.smartbadge.adl.staff.dto.CreateStaffRequest;
 import com.smartbadge.adl.staff.dto.UpdateStaffRequest;
 import com.smartbadge.adl.team.TeamDocumentDto;
 import com.smartbadge.adl.team.TeamService;
-
-
-import java.util.ArrayList;
-
-import org.modelmapper.ModelMapper;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.stereotype.Service;
-
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,6 +43,13 @@ public class StaffService {
 		log.info("Finding staff by staffId: {}", staffId);
 		StaffDto dto = toDto(getOrThrow(staffId));
 		log.info("Found staff by staffId: {}", staffId);
+		LeaveDocumentDto leaveDoc = leaveService.findByStaffId(staffId).orElse(new LeaveDocumentDto());
+		log.info("Fetcehd Leave Details by staffId: {}", staffId);
+		log.trace("Mapping Leave to StaffDto: {}", staffId);
+		dto.setLeaves(leaveDoc);
+		TeamDocumentDto teamMembers = teamService.findByStaffId(staffId).orElse(null);
+		log.info("Finding team document by staffId: {}", staffId);
+		dto.setTeamMembers(teamMembers);
 		return dto;
 	}
 
@@ -156,10 +161,11 @@ public class StaffService {
 
 	private Staff getOrThrow(String staffId) {
 		log.info("Loading staff document: {}", staffId);
-		return staffRepository.findById(staffId).orElseThrow(() -> new ResourceNotFoundException("Staff", staffId));
+		return staffRepository.findByStaffId(staffId)
+				.orElseThrow(() -> new ResourceNotFoundException("Staff", staffId));
 	}
 
-	StaffDto toDto(Staff s) {
+	private StaffDto toDto(Staff s) {
 		log.trace("Mapping Staff to StaffDto: {}", s.getStaffId());
 		return modelMapper.map(s, StaffDto.class);
 	}

@@ -19,7 +19,7 @@ public class ModelMapperConfig {
                 .setSkipNullEnabled(true);
 
         modelMapper.typeMap(Staff.class, StaffDto.class)
-                .addMapping(Staff::getAddresses, StaffDto::setAddress);
+                .addMapping(Staff::getAddresses, StaffDto::setAddresses);
         modelMapper.typeMap(Staff.class, StaffProfileDto.class)
                 .addMapping(Staff::getAddresses, StaffProfileDto::setAddress);
 

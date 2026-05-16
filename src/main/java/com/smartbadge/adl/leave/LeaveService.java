@@ -66,6 +66,7 @@ public class LeaveService {
         LeaveDocument doc = leaveRepository.findByStaffId(staffId)
                 .orElse(LeaveDocument.builder().staffId(staffId).leaveBalance(0)
                         .leaves(new ArrayList<>()).build());
+        doc.setLeaveBalance(req.getLeaveBalance() != null ? req.getLeaveBalance() : doc.getLeaveBalance());
         String refId = "LEV-REQ-" + System.currentTimeMillis();
         LeaveEntry entry = modelMapper.map(req, LeaveEntry.class);
         entry.setReferenceId(refId);

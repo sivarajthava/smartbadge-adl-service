@@ -9,7 +9,7 @@
 		"jobTitle": "Senior Software Engineer",
 		"grade": "IT.07",
 		"businessCardType": "EMIRATES",
-		"address": [
+		"addresses": [
 			{
 				"address": "RESIDENCE",
 				"street": "1st street",
@@ -25,7 +25,7 @@
 				"addressType": "CURRENT"
 			}
 		],
-		"leaveDocumentDto": {
+		"leaves	": {
 			"leaveBalance": 3,
 			"staffId": "S4861934",
 			"leaves": [

@@ -1,8 +1,6 @@
 package com.smartbadge.adl.team.dto;
 
-import com.smartbadge.adl.staff.Staff;
 import com.smartbadge.adl.team.MemberStatus;
-
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

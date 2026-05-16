@@ -15,16 +15,16 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class LeaveEntry {
-    private String referenceId;
-    private LeaveType leaveType;
-    private LeaveStatus leaveStatus;
+	private String referenceId;
+	private LeaveType leaveType;
+	private LeaveStatus leaveStatus;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate fromDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate fromDate;
 
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate toDate;
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate toDate;
 
-    private String reason;
-    private String comments;
+	private String reason;
+	private String comments;
 }

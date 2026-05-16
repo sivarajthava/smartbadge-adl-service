@@ -1,6 +1,7 @@
 spring:
   data:
     mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/smartbadge}
       auto-index-creation: true
   jackson:
     serialization:

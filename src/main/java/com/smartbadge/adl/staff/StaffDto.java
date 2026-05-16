@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.smartbadge.adl.leave.LeaveDocumentDto;
+import com.smartbadge.adl.team.TeamDocumentDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,6 +25,7 @@ public class StaffDto {
     private String jobTitle;
     private String grade;
     private BusinessCardType businessCardType;
-    private LeaveDocumentDto leave;
-    private List<AddressDto> address;
+    private LeaveDocumentDto leaves;
+    private TeamDocumentDto teamMembers;
+    private List<AddressDto> addresses;
 }

@@ -1,19 +1,26 @@
 package com.smartbadge.adl.leave;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.smartbadge.adl.leave.dto.CreateLeaveEntryRequest;
 import com.smartbadge.adl.leave.dto.UpdateLeaveBalanceRequest;
 import com.smartbadge.adl.leave.dto.UpdateLeaveEntryRequest;
 import com.smartbadge.adl.shared.ApiResponse;
-import com.smartbadge.adl.staff.Staff;
-
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/leave")
@@ -23,22 +30,22 @@ public class LeaveController {
 
     private final LeaveService leaveService;
 
-    @GetMapping("/{staffId}")
+    @GetMapping("/admin/{staffId}")
     @Operation(summary = "Get leave document for a staff member")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> get(@PathVariable String staffId) {
         return ResponseEntity.ok(ApiResponse.success(leaveService.getByStaffId(staffId)));
     }
 
-    @PostMapping("/{staffId}")
+    @PostMapping("/admin/{staffId}")
     @Operation(summary = "Initialize leave document (idempotent)")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> initialize(
             @PathVariable String staffId,
-            @RequestParam(defaultValue = "0") Integer leaveBalance) {
+            @Valid @RequestBody UpdateLeaveBalanceRequest req) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.success(leaveService.initializeOrUpdate(staffId, leaveBalance)));
+                .body(ApiResponse.success(leaveService.initializeOrUpdate(staffId, req.getLeaveBalance())));
     }
 
-    @PatchMapping("/{staffId}/balance")
+    @PatchMapping("/admin/{staffId}/balance")
     @Operation(summary = "Update leave balance")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> updateBalance(
             @PathVariable String staffId,
@@ -46,7 +53,7 @@ public class LeaveController {
         return ResponseEntity.ok(ApiResponse.success(leaveService.updateBalance(staffId, req.getLeaveBalance())));
     }
 
-    @PostMapping("/{staffId}/entries")
+    @PostMapping("/{staffId}/apply")
     @Operation(summary = "Add a new leave entry (status defaults to PENDING)")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> addEntry(
             @PathVariable String staffId,
@@ -55,7 +62,7 @@ public class LeaveController {
                 .body(ApiResponse.success(leaveService.addLeaveEntry(staffId, req)));
     }
 
-    @PutMapping("/{staffId}/entries/{referenceId}")
+    @PutMapping("/{staffId}/approve/{referenceId}")
     @Operation(summary = "Update a leave entry (partial update)")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> updateEntry(
             @PathVariable String staffId,
@@ -64,7 +71,7 @@ public class LeaveController {
         return ResponseEntity.ok(ApiResponse.success(leaveService.updateLeaveEntry(staffId, referenceId, req)));
     }
 
-    @DeleteMapping("/{staffId}/entries/{referenceId}")
+    @DeleteMapping("/{staffId}/delete/{referenceId}")
     @Operation(summary = "Delete a leave entry")
     public ResponseEntity<ApiResponse<LeaveDocumentDto>> deleteEntry(
             @PathVariable String staffId,
