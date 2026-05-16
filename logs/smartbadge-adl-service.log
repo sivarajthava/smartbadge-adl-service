@@ -1,0 +1,300 @@
+2026-05-16 10:25:15.896 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Starting...
+2026-05-16 10:25:16.705 INFO  [traceId:] [spanId:] [staffId:] [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-16 10:25:16.806 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Starting SmartBadgeApplication using Java 17.0.12 with PID 28812 (C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service\target\classes started by HP in C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service)
+2026-05-16 10:25:16.809 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-16 10:25:19.235 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-16 10:25:19.366 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 121 ms. Found 4 MongoDB repository interfaces.
+2026-05-16 10:25:20.240 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-16 10:25:20.262 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:25:20.277 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-16 10:25:20.277 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-16 10:25:20.442 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-16 10:25:20.442 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3522 ms
+2026-05-16 10:25:21.074 INFO  [traceId:] [spanId:] [staffId:] [main] org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@25a290ee], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@406ad6d5, com.mongodb.Jep395RecordCodecProvider@2a7bc16b, com.mongodb.KotlinCodecProvider@1186374c]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@25218a4d], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2026-05-16 10:25:21.118 INFO  [traceId:] [spanId:] [staffId:] [cluster-ClusterId{value='6a080dd005e55f15093b582f', description='null'}-localhost:27017] org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=28, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=40952000}
+2026-05-16 10:25:23.729 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-16 10:25:23.828 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:25:23.891 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-16 10:25:23.931 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.s.config.TaskSchedulerRouter - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-05-16 10:25:23.945 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Started SmartBadgeApplication in 7.89 seconds (process running for 9.161)
+2026-05-16 10:25:24.049 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Successfully Started...
+2026-05-16 10:25:30.099 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-16 10:25:30.099 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-16 10:25:30.102 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-05-16 10:25:30.220 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Finding staff by staffId: E0001
+2026-05-16 10:25:30.221 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Loading staff document: E0001
+2026-05-16 10:25:30.428 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Found staff by staffId: E0001
+2026-05-16 10:25:30.429 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.leave.LeaveService - Finding leave document by staffId: E0001
+2026-05-16 10:25:30.470 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.leave.LeaveService - Leave document lookup completed for staffId: E0001, found=true
+2026-05-16 10:25:30.471 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Fetcehd Leave Details by staffId: E0001
+2026-05-16 10:25:30.471 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] com.smartbadge.adl.team.TeamService - Finding team document by staffId: E0001
+2026-05-16 10:25:30.503 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] com.smartbadge.adl.team.TeamService - Team document lookup completed for staffId: E0001, found=true
+2026-05-16 10:25:30.503 INFO  [traceId:2b108a163b704dc498bc1e183d13ba97] [spanId:b00a615efa6d4b5a] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Finding team document by staffId: E0001
+2026-05-16 10:27:43.796 INFO  [traceId:c90981b4fe034a9db3afa4e96a245bd1] [spanId:bf377f43f62a4647] [staffId:E00011] [http-nio-8080-exec-5] c.smartbadge.adl.staff.StaffService - Finding staff by staffId: E00011
+2026-05-16 10:27:43.797 INFO  [traceId:c90981b4fe034a9db3afa4e96a245bd1] [spanId:bf377f43f62a4647] [staffId:E00011] [http-nio-8080-exec-5] c.smartbadge.adl.staff.StaffService - Loading staff document: E00011
+2026-05-16 10:27:43.803 WARN  [traceId:c90981b4fe034a9db3afa4e96a245bd1] [spanId:bf377f43f62a4647] [staffId:E00011] [http-nio-8080-exec-5] c.s.a.s.e.GlobalExceptionHandler - Resource not found: Staff not found with identifier: E00011
+2026-05-16 10:31:46.765 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Starting...
+2026-05-16 10:31:48.380 INFO  [traceId:] [spanId:] [staffId:] [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-16 10:31:48.510 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Starting SmartBadgeApplication using Java 17.0.12 with PID 42420 (C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service\target\classes started by HP in C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service)
+2026-05-16 10:31:48.514 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-16 10:31:51.870 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-16 10:31:52.096 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 213 ms. Found 4 MongoDB repository interfaces.
+2026-05-16 10:31:53.196 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-16 10:31:53.236 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:31:53.253 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-16 10:31:53.253 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-16 10:31:53.431 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-16 10:31:53.431 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4772 ms
+2026-05-16 10:31:54.261 INFO  [traceId:] [spanId:] [staffId:] [main] org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@22b82ddf], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@4c5f7b4f, com.mongodb.Jep395RecordCodecProvider@4b544732, com.mongodb.KotlinCodecProvider@44084713]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@2fba0dac], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2026-05-16 10:31:54.327 INFO  [traceId:] [spanId:] [staffId:] [cluster-ClusterId{value='6a080f5ae02d6f671a889a8d', description='null'}-localhost:27017] org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=28, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=51613200}
+2026-05-16 10:31:57.558 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-16 10:31:57.637 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:31:57.701 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-16 10:31:57.739 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.s.config.TaskSchedulerRouter - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-05-16 10:31:57.750 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Started SmartBadgeApplication in 10.526 seconds (process running for 11.932)
+2026-05-16 10:31:57.833 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Successfully Started...
+2026-05-16 10:32:00.068 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-16 10:32:00.069 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-16 10:32:00.071 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-05-16 10:32:00.150 INFO  [traceId:142b578209f64ac1995b2e356fed3ef6] [spanId:c38beee170a5464f] [staffId:E00011] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Finding staff by staffId: E00011
+2026-05-16 10:32:00.151 INFO  [traceId:142b578209f64ac1995b2e356fed3ef6] [spanId:c38beee170a5464f] [staffId:E00011] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Loading staff document: E00011
+2026-05-16 10:32:00.239 WARN  [traceId:142b578209f64ac1995b2e356fed3ef6] [spanId:c38beee170a5464f] [staffId:E00011] [http-nio-8080-exec-2] c.s.a.s.e.GlobalExceptionHandler - Resource not found: Staff not found with identifier: E00011
+2026-05-16 10:32:15.557 INFO  [traceId:b9cc77508ca7452e91ae36cdffbaefdf] [spanId:a007056d428f4706] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Updating staff: E0001
+2026-05-16 10:32:15.558 INFO  [traceId:b9cc77508ca7452e91ae36cdffbaefdf] [spanId:a007056d428f4706] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Loading staff document: E0001
+2026-05-16 10:32:15.687 INFO  [traceId:b9cc77508ca7452e91ae36cdffbaefdf] [spanId:a007056d428f4706] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Updated staff: E0001
+2026-05-16 10:32:18.993 INFO  [traceId:4b4241748278478fb6b7f70c71a3cfd6] [spanId:215e9eafd769418e] [staffId:] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Creating staff: E0001
+2026-05-16 10:32:19.043 WARN  [traceId:4b4241748278478fb6b7f70c71a3cfd6] [spanId:215e9eafd769418e] [staffId:] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Create staff rejected because staffId already exists: E0001
+2026-05-16 10:32:19.044 WARN  [traceId:4b4241748278478fb6b7f70c71a3cfd6] [spanId:215e9eafd769418e] [staffId:] [http-nio-8080-exec-4] c.s.a.s.e.GlobalExceptionHandler - Duplicate resource: Staff already exists with identifier: E0001
+2026-05-16 10:37:36.767 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Starting...
+2026-05-16 10:37:37.688 INFO  [traceId:] [spanId:] [staffId:] [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-16 10:37:37.815 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Starting SmartBadgeApplication using Java 17.0.12 with PID 21820 (C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service\target\classes started by HP in C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service)
+2026-05-16 10:37:37.818 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-16 10:37:40.562 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-16 10:37:40.770 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 195 ms. Found 4 MongoDB repository interfaces.
+2026-05-16 10:37:42.148 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-16 10:37:42.212 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:37:42.236 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-16 10:37:42.242 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-16 10:37:42.508 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-16 10:37:42.511 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4580 ms
+2026-05-16 10:37:44.378 INFO  [traceId:] [spanId:] [staffId:] [main] org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@1ffd0114], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@7d28cdcd, com.mongodb.Jep395RecordCodecProvider@255ed8e4, com.mongodb.KotlinCodecProvider@406ad6d5]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@7e747037], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2026-05-16 10:37:44.425 INFO  [traceId:] [spanId:] [staffId:] [cluster-ClusterId{value='6a0810b8ea37325490bae092', description='null'}-localhost:27017] org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=28, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=55875300}
+2026-05-16 10:37:51.245 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 3 endpoints beneath base path '/actuator'
+2026-05-16 10:37:51.365 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:37:51.451 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-16 10:37:51.512 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.s.config.TaskSchedulerRouter - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-05-16 10:37:51.534 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Started SmartBadgeApplication in 14.575 seconds (process running for 15.768)
+2026-05-16 10:37:51.666 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Successfully Started...
+2026-05-16 10:38:32.777 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-16 10:38:32.777 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-16 10:38:32.780 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-05-16 10:38:33.208 INFO  [traceId:5f8f7b98bd974982af21db159ae605a2] [spanId:0d2ec03d25d64a0a] [staffId:] [http-nio-8080-exec-1] c.smartbadge.adl.staff.StaffService - Creating staff: E0001
+2026-05-16 10:38:33.274 WARN  [traceId:5f8f7b98bd974982af21db159ae605a2] [spanId:0d2ec03d25d64a0a] [staffId:] [http-nio-8080-exec-1] c.smartbadge.adl.staff.StaffService - Create staff rejected because staffId already exists: E0001
+2026-05-16 10:38:33.278 WARN  [traceId:5f8f7b98bd974982af21db159ae605a2] [spanId:0d2ec03d25d64a0a] [staffId:] [http-nio-8080-exec-1] c.s.a.s.e.GlobalExceptionHandler - Staff already exists: Staff already exists in the system
+2026-05-16 10:38:41.183 INFO  [traceId:a4e22e84ff7d4b7c8a5436295d65103f] [spanId:7938d82bc4d24c36] [staffId:E0001] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Updating staff: E0001
+2026-05-16 10:38:41.184 INFO  [traceId:a4e22e84ff7d4b7c8a5436295d65103f] [spanId:7938d82bc4d24c36] [staffId:E0001] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Loading staff document: E0001
+2026-05-16 10:38:41.323 INFO  [traceId:a4e22e84ff7d4b7c8a5436295d65103f] [spanId:7938d82bc4d24c36] [staffId:E0001] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Updated staff: E0001
+2026-05-16 10:39:31.818 ERROR [traceId:1c3b330828874f7bb4bb1c94a1f402c9] [spanId:840c2d3babdf419f] [staffId:] [http-nio-8080-exec-5] c.s.a.s.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.smartbadge.adl.shared.config.MdcFilter.doFilterInternal(MdcFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-16 10:39:31.948 ERROR [traceId:4a3ee015392e4432b6010b55737890c8] [spanId:ae8d3b01af524af0] [staffId:] [http-nio-8080-exec-9] c.s.a.s.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.smartbadge.adl.shared.config.MdcFilter.doFilterInternal(MdcFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-16 10:40:07.642 INFO  [traceId:6757fe754a9c4f75a24416f9f8bab230] [spanId:ab0ba3dd8d064190] [staffId:] [http-nio-8080-exec-9] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 4807 ms
+2026-05-16 10:41:03.473 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Starting...
+2026-05-16 10:41:04.665 INFO  [traceId:] [spanId:] [staffId:] [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+2026-05-16 10:41:04.829 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Starting SmartBadgeApplication using Java 17.0.12 with PID 43180 (C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service\target\classes started by HP in C:\Users\HP\workspace\Hack\repo\smartbadge-adl-service)
+2026-05-16 10:41:04.831 DEBUG [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Running with Spring Boot v3.3.5, Spring v6.1.14
+2026-05-16 10:41:04.833 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - No active profile set, falling back to 1 default profile: "default"
+2026-05-16 10:41:07.564 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2026-05-16 10:41:07.774 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 194 ms. Found 4 MongoDB repository interfaces.
+2026-05-16 10:41:08.980 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-05-16 10:41:09.014 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:41:09.022 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-05-16 10:41:09.022 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-05-16 10:41:09.225 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-05-16 10:41:09.225 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4246 ms
+2026-05-16 10:41:09.598 DEBUG [traceId:] [spanId:] [staffId:] [main] c.s.adl.shared.config.MdcFilter - Filter 'mdcFilter' configured for use
+2026-05-16 10:41:10.104 INFO  [traceId:] [spanId:] [staffId:] [main] org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.0.1"}, "os": {"type": "Windows", "name": "Windows 11", "architecture": "amd64", "version": "10.0"}, "platform": "Java/Oracle Corporation/17.0.12+8-LTS-286"} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=null, transportSettings=null, commandListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsCommandListener@591be8aa], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@1da75dde, com.mongodb.Jep395RecordCodecProvider@5c5f0edc, com.mongodb.KotlinCodecProvider@153cfd86]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[localhost:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[io.micrometer.core.instrument.binder.mongodb.MongoMetricsConnectionPoolListener@59a09be], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null}
+2026-05-16 10:41:10.149 INFO  [traceId:] [spanId:] [staffId:] [cluster-ClusterId{value='6a08118505a0582b75727570', description='null'}-localhost:27017] org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=28, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48104300}
+2026-05-16 10:41:13.623 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-05-16 10:41:13.715 INFO  [traceId:] [spanId:] [staffId:] [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-05-16 10:41:13.767 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-05-16 10:41:13.811 INFO  [traceId:] [spanId:] [staffId:] [main] o.s.s.config.TaskSchedulerRouter - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2026-05-16 10:41:13.825 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - Started SmartBadgeApplication in 10.12 seconds (process running for 11.293)
+2026-05-16 10:41:13.933 INFO  [traceId:] [spanId:] [staffId:] [main] c.s.adl.SmartBadgeApplication - SmartBadge Application Successfully Started...
+2026-05-16 10:41:23.592 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-16 10:41:23.592 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-05-16 10:41:23.596 INFO  [traceId:] [spanId:] [staffId:] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-05-16 10:41:23.954 INFO  [traceId:652bead14eca42c68c5eaa5656254ffc] [spanId:a607a6369b724240] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Updating staff: E0001
+2026-05-16 10:41:23.954 INFO  [traceId:652bead14eca42c68c5eaa5656254ffc] [spanId:a607a6369b724240] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Loading staff document: E0001
+2026-05-16 10:41:24.207 INFO  [traceId:652bead14eca42c68c5eaa5656254ffc] [spanId:a607a6369b724240] [staffId:E0001] [http-nio-8080-exec-2] c.smartbadge.adl.staff.StaffService - Updated staff: E0001
+2026-05-16 10:41:29.156 INFO  [traceId:7c3a9932bcd640709bcdf339e1149e7c] [spanId:f9080f03f3d94d0f] [staffId:] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Creating staff: E0001
+2026-05-16 10:41:29.177 WARN  [traceId:7c3a9932bcd640709bcdf339e1149e7c] [spanId:f9080f03f3d94d0f] [staffId:] [http-nio-8080-exec-4] c.smartbadge.adl.staff.StaffService - Create staff rejected because staffId already exists: E0001
+2026-05-16 10:41:29.181 WARN  [traceId:7c3a9932bcd640709bcdf339e1149e7c] [spanId:f9080f03f3d94d0f] [staffId:] [http-nio-8080-exec-4] c.s.a.s.e.GlobalExceptionHandler - Staff already exists: Staff already exists in the system
+2026-05-16 10:42:01.075 INFO  [traceId:3bcf683d24504531a94c956c85323276] [spanId:c2ba48aee21c47a0] [staffId:] [http-nio-8080-exec-9] o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1588 ms
+2026-05-16 10:43:35.777 ERROR [traceId:3242e6dc586b4d38bd428c87640be9c7] [spanId:c8abe12197244a77] [staffId:] [http-nio-8080-exec-1] c.s.a.s.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource .well-known/appspecific/com.chrome.devtools.json.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at com.smartbadge.adl.shared.config.MdcFilter.doFilterInternal(MdcFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2026-05-16 10:44:15.923 INFO  [traceId:3aec032f64044e87a3d589ea6c3eb553] [spanId:3766f5afcdbd4b9e] [staffId:] [http-nio-8080-exec-5] c.smartbadge.adl.staff.StaffService - Creating staff: E0001
+2026-05-16 10:44:15.927 WARN  [traceId:3aec032f64044e87a3d589ea6c3eb553] [spanId:3766f5afcdbd4b9e] [staffId:] [http-nio-8080-exec-5] c.smartbadge.adl.staff.StaffService - Create staff rejected because staffId already exists: E0001
+2026-05-16 10:44:15.928 WARN  [traceId:3aec032f64044e87a3d589ea6c3eb553] [spanId:3766f5afcdbd4b9e] [staffId:] [http-nio-8080-exec-5] c.s.a.s.e.GlobalExceptionHandler - Staff already exists: Staff already exists in the system
+2026-05-16 10:44:21.458 INFO  [traceId:b774f44ed5924fdf94ea59012cb689d2] [spanId:991e4243298b4d8f] [staffId:E00011] [http-nio-8080-exec-6] c.smartbadge.adl.staff.StaffService - Finding staff by staffId: E00011
+2026-05-16 10:44:21.458 INFO  [traceId:b774f44ed5924fdf94ea59012cb689d2] [spanId:991e4243298b4d8f] [staffId:E00011] [http-nio-8080-exec-6] c.smartbadge.adl.staff.StaffService - Loading staff document: E00011
+2026-05-16 10:44:21.463 WARN  [traceId:b774f44ed5924fdf94ea59012cb689d2] [spanId:991e4243298b4d8f] [staffId:E00011] [http-nio-8080-exec-6] c.s.a.s.e.GlobalExceptionHandler - Resource not found: Staff not found with identifier: E00011
+2026-05-16 10:44:23.414 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Finding staff by staffId: E0001
+2026-05-16 10:44:23.414 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Loading staff document: E0001
+2026-05-16 10:44:23.420 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Found staff by staffId: E0001
+2026-05-16 10:44:23.420 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.leave.LeaveService - Finding leave document by staffId: E0001
+2026-05-16 10:44:23.442 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.leave.LeaveService - Leave document lookup completed for staffId: E0001, found=true
+2026-05-16 10:44:23.443 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Fetcehd Leave Details by staffId: E0001
+2026-05-16 10:44:23.443 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] com.smartbadge.adl.team.TeamService - Finding team document by staffId: E0001
+2026-05-16 10:44:23.462 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] com.smartbadge.adl.team.TeamService - Team document lookup completed for staffId: E0001, found=true
+2026-05-16 10:44:23.462 INFO  [traceId:9c59382caefa46b48f6bfd1c1af3dfea] [spanId:887f902139e34439] [staffId:E0001] [http-nio-8080-exec-3] c.smartbadge.adl.staff.StaffService - Finding team document by staffId: E0001

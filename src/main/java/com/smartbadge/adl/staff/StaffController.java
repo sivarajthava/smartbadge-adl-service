@@ -20,6 +20,10 @@ import com.smartbadge.adl.staff.dto.UpdateStaffRequest;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.ExampleObject;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -28,77 +32,78 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/staff")
 @RequiredArgsConstructor
 @Tag(name = "Staff Management", description = "CRUD operations for staff profiles")
+@ApiResponses(value = {
+		@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad request, validation error, missing parameter, or staff already exists", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+		@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404", description = "Requested staff resource was not found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+		@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "409", description = "Duplicate resource conflict", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+		@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "500", description = "Unable to process your request", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))) })
 public class StaffController {
 
-    private final StaffService staffService;
+	private final StaffService staffService;
 
-    @GetMapping
-    @Operation(summary = "List all staff (paginated)")
-    public ResponseEntity<ApiResponse<Page<StaffDto>>> findAll(
-            @PageableDefault(size = 20, sort = "name") Pageable pageable) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.findAll(pageable)));
-    }
+	@GetMapping
+	@Operation(summary = "List all staff (paginated)")
+	public ResponseEntity<ApiResponse<Page<StaffDto>>> findAll(
+			@PageableDefault(size = 20, sort = "name") Pageable pageable) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.findAll(pageable)));
+	}
 
-    @GetMapping("/{staffId}")
-    @Operation(summary = "Get staff by ID — basic profile")
-    public ResponseEntity<ApiResponse<StaffDto>> findById(
-            @Parameter(description = "Staff identifier, e.g. E4861934") @PathVariable String staffId) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.findByStaffId(staffId)));
-    }
+	@GetMapping("/{staffId}")
+	@Operation(summary = "Get staff by ID — basic profile")
+	@ApiResponses(value = {
+			@io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "200", description = "Staff details with leave and team data", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class), examples = @ExampleObject(name = "Staff details response", value = ApiContract.SAVE_STAFF_JSON))) })
+	public ResponseEntity<ApiResponse<StaffDto>> findById(
+			@Parameter(description = "Staff identifier, e.g. E4861934") @PathVariable String staffId) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.findByStaffId(staffId)));
+	}
 
-    @GetMapping("/{staffId}/profile")
-    @Operation(summary = "Get full aggregated staff profile (leave + team data)")
-    public ResponseEntity<ApiResponse<StaffProfileDto>> getFullProfile(@PathVariable String staffId) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.getFullProfile(staffId)));
-    }
+	@GetMapping("/{staffId}/profile")
+	@Operation(summary = "Get full aggregated staff profile (leave + team data)")
+	public ResponseEntity<ApiResponse<StaffProfileDto>> getFullProfile(@PathVariable String staffId) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.getFullProfile(staffId)));
+	}
 
-    @PostMapping
-    @Operation(summary = "Create a new staff member")
-    public ResponseEntity<ApiResponse<StaffDto>> create(@Valid @RequestBody CreateStaffRequest request) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.success(staffService.create(request)));
-    }
+	@PostMapping
+	@Operation(summary = "Create a new staff member", requestBody = @io.swagger.v3.oas.annotations.parameters.RequestBody(required = true, content = @Content(mediaType = "application/json", schema = @Schema(implementation = CreateStaffRequest.class), examples = @ExampleObject(name = "Create staff request", value = ApiContract.GET_STAFF_JSON))))
+	public ResponseEntity<ApiResponse<StaffDto>> create(@Valid @RequestBody CreateStaffRequest request) {
+		return ResponseEntity.status(HttpStatus.CREATED).body(ApiResponse.success(staffService.create(request)));
+	}
 
-    @PutMapping("/{staffId}")
-    @Operation(summary = "Update staff information (partial update — only non-null fields are applied)")
-    public ResponseEntity<ApiResponse<StaffDto>> update(
-            @PathVariable String staffId,
-            @Valid @RequestBody UpdateStaffRequest request) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.update(staffId, request)));
-    }
+	@PutMapping("/{staffId}")
+	@Operation(summary = "Update staff information (partial update — only non-null fields are applied)")
+	public ResponseEntity<ApiResponse<StaffDto>> update(@PathVariable String staffId,
+			@Valid @RequestBody UpdateStaffRequest request) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.update(staffId, request)));
+	}
 
-    @DeleteMapping("/{staffId}")
-    @Operation(summary = "Delete a staff member")
-    public ResponseEntity<ApiResponse<Void>> delete(@PathVariable String staffId) {
-        staffService.delete(staffId);
-        return ResponseEntity.ok(ApiResponse.success());
-    }
+	@DeleteMapping("/{staffId}")
+	@Operation(summary = "Delete a staff member")
+	public ResponseEntity<ApiResponse<Void>> delete(@PathVariable String staffId) {
+		staffService.delete(staffId);
+		return ResponseEntity.ok(ApiResponse.success());
+	}
 
-    // ── Address sub-resource ─────────────────────────────────────────────────
+	// ── Address sub-resource ─────────────────────────────────────────────────
 
-    @PostMapping("/{staffId}/addresses")
-    @Operation(summary = "Add / replace an address (upserts by addressType)")
-    public ResponseEntity<ApiResponse<StaffDto>> addAddress(
-            @PathVariable String staffId,
-            @Valid @RequestBody AddressDto dto) {
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(ApiResponse.success(staffService.addAddress(staffId, dto)));
-    }
+	@PostMapping("/{staffId}/addresses")
+	@Operation(summary = "Add / replace an address (upserts by addressType)")
+	public ResponseEntity<ApiResponse<StaffDto>> addAddress(@PathVariable String staffId,
+			@Valid @RequestBody AddressDto dto) {
+		return ResponseEntity.status(HttpStatus.CREATED)
+				.body(ApiResponse.success(staffService.addAddress(staffId, dto)));
+	}
 
-    @PutMapping("/{staffId}/addresses/{addressType}")
-    @Operation(summary = "Update a specific address type")
-    public ResponseEntity<ApiResponse<StaffDto>> updateAddress(
-            @PathVariable String staffId,
-            @PathVariable AddressType addressType,
-            @Valid @RequestBody AddressDto dto) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.updateAddress(staffId, addressType, dto)));
-    }
+	@PutMapping("/{staffId}/addresses/{addressType}")
+	@Operation(summary = "Update a specific address type")
+	public ResponseEntity<ApiResponse<StaffDto>> updateAddress(@PathVariable String staffId,
+			@PathVariable AddressType addressType, @Valid @RequestBody AddressDto dto) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.updateAddress(staffId, addressType, dto)));
+	}
 
-    @DeleteMapping("/{staffId}/addresses/{addressType}")
-    @Operation(summary = "Remove a specific address type")
-    public ResponseEntity<ApiResponse<StaffDto>> removeAddress(
-            @PathVariable String staffId,
-            @PathVariable AddressType addressType) {
-        return ResponseEntity.ok(ApiResponse.success(staffService.removeAddress(staffId, addressType)));
-    }
+	@DeleteMapping("/{staffId}/addresses/{addressType}")
+	@Operation(summary = "Remove a specific address type")
+	public ResponseEntity<ApiResponse<StaffDto>> removeAddress(@PathVariable String staffId,
+			@PathVariable AddressType addressType) {
+		return ResponseEntity.ok(ApiResponse.success(staffService.removeAddress(staffId, addressType)));
+	}
 }

@@ -25,8 +25,12 @@ public class ApiResponse<T> {
 	}
 
 	public static <T> ApiResponse<T> error(String message) {
+		return error(message, message);
+	}
+
+	public static <T> ApiResponse<T> error(String errorCode, String errorMessage) {
 		return ApiResponse.<T>builder().success(false)
-				.error(ErrorDetail.builder().errorCode(message).errorMessage(message).build())
+				.error(ErrorDetail.builder().errorCode(errorCode).errorMessage(errorMessage).build())
 				.timestamp(DateUtils.currentDate()).build();
 	}
 

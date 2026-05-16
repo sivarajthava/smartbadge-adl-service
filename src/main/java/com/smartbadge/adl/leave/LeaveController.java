@@ -18,6 +18,9 @@ import com.smartbadge.adl.leave.dto.UpdateLeaveEntryRequest;
 import com.smartbadge.adl.shared.ApiResponse;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +29,12 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/v1/leave")
 @RequiredArgsConstructor
 @Tag(name = "Leave Management", description = "Manage staff leave documents and entries")
+@ApiResponses(value = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad request, validation error, or missing parameter", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404", description = "Requested leave resource was not found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "409", description = "Duplicate resource conflict", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "500", description = "Unable to process your request", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class)))
+})
 public class LeaveController {
 
     private final LeaveService leaveService;

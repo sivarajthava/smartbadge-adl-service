@@ -11,6 +11,7 @@ import com.smartbadge.adl.leave.LeaveDocumentDto;
 import com.smartbadge.adl.leave.LeaveService;
 import com.smartbadge.adl.shared.exception.DuplicateResourceException;
 import com.smartbadge.adl.shared.exception.ResourceNotFoundException;
+import com.smartbadge.adl.shared.exception.StaffAlreadyExistsException;
 import com.smartbadge.adl.staff.dto.CreateStaffRequest;
 import com.smartbadge.adl.staff.dto.UpdateStaffRequest;
 import com.smartbadge.adl.team.TeamDocumentDto;
@@ -70,11 +71,11 @@ public class StaffService {
 		log.info("Creating staff: {}", req.getStaffId());
 		if (staffRepository.existsById(req.getStaffId())) {
 			log.warn("Create staff rejected because staffId already exists: {}", req.getStaffId());
-			throw new DuplicateResourceException("Staff", req.getStaffId());
+			throw new StaffAlreadyExistsException();
 		}
 		if (staffRepository.existsByEmail(req.getEmail())) {
 			log.warn("Create staff rejected because email already exists for staffId: {}", req.getStaffId());
-			throw new DuplicateResourceException("Staff (email)", req.getEmail());
+			throw new StaffAlreadyExistsException();
 		}
 		Staff staff = modelMapper.map(req, Staff.class);
 		if (staff.getAddresses() == null) {

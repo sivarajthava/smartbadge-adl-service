@@ -14,6 +14,7 @@ import com.smartbadge.adl.preference.dto.UpdateSettingsRequest;
 import com.smartbadge.adl.preference.dto.UpdateWidgetRequest;
 import com.smartbadge.adl.shared.exception.DuplicateResourceException;
 import com.smartbadge.adl.shared.exception.ResourceNotFoundException;
+import com.smartbadge.adl.shared.exception.UserNotFoundException;
 import com.smartbadge.adl.shared.util.DateUtils;
 
 import lombok.RequiredArgsConstructor;
@@ -189,7 +190,7 @@ public class UserPreferenceService {
 		log.info("Finding preference document for userId: {}", userId);
 		return preferenceRepository.findByUserId(userId).orElseThrow(() -> {
 			log.info("Preference document was not found for userId: {}", userId);
-			return new ResourceNotFoundException("User Preference", userId);
+			return new UserNotFoundException(userId);
 		});
 	}
 
