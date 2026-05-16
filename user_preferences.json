@@ -1,0 +1,195 @@
+{
+  "servers": [
+    {
+      "url": "http://localhost:8080"
+    }
+  ],
+  "paths": {
+    "/api/v1/{userId}/preferences": {
+      "get": {
+        "summary": "Get user preferences",
+        "description": "Fetch user preferences along with getting started widgets",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "description": "Unique user identifier",
+            "schema": {
+              "type": "string",
+              "example": "345351"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserPreferenceResponse"
+                },
+                "example": {
+                  "success": true,
+                  "userId": "345351",
+                  "userName": "TestUser",
+                  "widgets": [
+                    {
+                      "widgetId": "21",
+                      "actionId": "001",
+                      "title": "Add Dependant",
+                      "subTitle": "Family Insurance Coverage",
+                      "displayOrder": "1"
+                    },
+                    {
+                      "widgetId": "22",
+                      "actionId": "002",
+                      "title": "Add Bank Details",
+                      "subTitle": "Required for Payroll Setup",
+                      "displayOrder": "2"
+                    }
+                  ],
+                  "quickActions": [
+                    {
+                      "actionId": "001",
+                      "title": "Timesheet",
+                      "subTitle": "Submit your timesheet",
+                      "displayOrder": "1"
+                    },
+                    {
+                      "actionId": "002",
+                      "title": "Request Leave",
+                      "subTitle": "Apply for leave",
+                      "displayOrder": "2"
+                    }
+                  ],
+                  "facetData": {
+                    "createdAt": "2023-09-07T10:09:00.000Z",
+                    "updatedAt": "2023-09-07T10:09:00.000Z"
+                  },
+                  "facetScore": "0.785498000"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UserPreferenceResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "userId": {
+            "type": "string",
+            "example": "345351"
+          },
+          "userName": {
+            "type": "string",
+            "example": "TestUser"
+          },
+          "widgets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Widget"
+            }
+          },
+          "quickActions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/QuickAction"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "preferences": {
+            "type": "object",
+            "properties": {
+              "currency": {
+                "type": "string",
+                "example": "KWD"
+              },
+              "language": {
+                "type": "string",
+                "example": "en"
+              },
+              "timezone": {
+                "type": "string",
+                "example": "Asia/Dubai"
+              },
+              "dateFormat": {
+                "type": "string",
+                "example": "dd-MM-yyyy"
+              }
+            }
+          }
+        }
+      },
+      "Widget": {
+        "type": "object",
+        "properties": {
+          "widgetId": {
+            "type": "string",
+            "example": "ROI"
+          },
+          "actionId": {
+            "type": "string",
+            "example": "001"
+          },
+          "title": {
+            "type": "string",
+            "example": "Add Dependant"
+          },
+          "subTitle": {
+            "type": "string",
+            "example": "Family Insurance Coverage"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      },
+      "QuickAction": {
+        "type": "object",
+        "properties": {
+          "actionId": {
+            "type": "string",
+            "example": "001"
+          },
+          "title": {
+            "type": "string",
+            "example": "Timesheet"
+          },
+          "subTitle": {
+            "type": "string",
+            "example": "Submit your timesheet"
+          },
+          "displayOrder": {
+            "type": "integer",
+            "example": 1
+          }
+        }
+      },
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "createdAt": {
+            "type": "string",
+            "example": "2023-09-07T10:09:00.000Z"
+          },
+          "updatedAt": {
+            "type": "string",
+            "example": "2023-09-07T10:09:00.000Z"
+          }
+        }
+      }
+    }
+  }
+}

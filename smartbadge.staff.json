@@ -1,0 +1,14 @@
+[{
+  "_id": "E4861934",
+  "name": "Sivaraj Thavamani",
+  "email": "stsivaraj@gmail.com",
+  "title": "MR",
+  "jobTitle": "Senior Software Engineer",
+  "grade": "IT.07",
+  "businessCardType": "SMARTBADGE",
+  "addresses": [],
+  "updatedAt": {
+    "$date": "2026-05-15T02:50:06.626Z"
+  },
+  "_class": "com.smartbadge.adl.staff.Staff"
+}]

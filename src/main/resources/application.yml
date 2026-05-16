@@ -4,6 +4,7 @@ spring:
   data:
     mongodb:
       uri: ${MONGODB_URI:mongodb://localhost:27017/smartbadge}
+      database: smartbadge
       auto-index-creation: true
   jackson:
     default-property-inclusion: NON_NULL
@@ -43,6 +44,9 @@ springdoc:
     display-request-duration: true
 
 app:
+  security:
+    enabled: ${SECURITY_ENABLED:false}
+    issuer-uri: ${MICROSOFT_ISSUER_URI:https://login.microsoftonline.com/${MICROSOFT_TENANT_ID:common}/v2.0}
   openapi:
     dev-url: http://localhost:8080
 

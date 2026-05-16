@@ -9,6 +9,7 @@ import java.util.Optional;
 
 public interface StaffRepository extends MongoRepository<Staff, String> {
     Optional<Staff> findByEmail(String email);
+    Optional<Staff> findByStaffId(String staffId);
     Page<Staff> findAll(Pageable pageable);
     boolean existsByEmail(String email);
 }

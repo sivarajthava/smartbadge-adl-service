@@ -2,8 +2,9 @@ package com.smartbadge.adl.leave.dto;
 
 import com.smartbadge.adl.leave.LeaveType;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,19 +20,23 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class CreateLeaveEntryRequest {
 
-    @NotNull(message = "Leave type is required")
-    private LeaveType leaveType;
+	@NotNull(message = "Leave balance is required")
+	@Min(value = 0, message = "Leave balance cannot be negative")
+	private Integer leaveBalance;
 
-    @NotNull(message = "From date is required")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate fromDate;
+	@NotNull(message = "Leave type is required")
+	private LeaveType leaveType;
 
-    @NotNull(message = "To date is required")
-    @JsonFormat(pattern = "dd/MM/yyyy")
-    private LocalDate toDate;
+	@NotNull(message = "From date is required")
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate fromDate;
 
-    @NotBlank(message = "Reason is required")
-    private String reason;
+	@NotNull(message = "To date is required")
+	@JsonFormat(pattern = "dd/MM/yyyy")
+	private LocalDate toDate;
 
-    private String comments;
+	@NotBlank(message = "Reason is required")
+	private String reason;
+
+	private String comments;
 }

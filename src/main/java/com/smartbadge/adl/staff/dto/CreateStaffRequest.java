@@ -1,11 +1,10 @@
 package com.smartbadge.adl.staff.dto;
 
-import com.smartbadge.adl.staff.Address;
+import java.util.List;
+
 import com.smartbadge.adl.staff.AddressDto;
 import com.smartbadge.adl.staff.BusinessCardType;
-import com.smartbadge.adl.staff.Staff;
 import com.smartbadge.adl.staff.Title;
-
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -16,8 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.util.List;
 
 @Data
 @Builder

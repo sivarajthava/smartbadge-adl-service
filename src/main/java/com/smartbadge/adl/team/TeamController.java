@@ -1,12 +1,14 @@
 package com.smartbadge.adl.team;
 
 import com.smartbadge.adl.shared.ApiResponse;
-import com.smartbadge.adl.staff.Staff;
 import com.smartbadge.adl.team.dto.AddTeamMemberRequest;
 import com.smartbadge.adl.team.dto.UpdateTeamMemberRequest;
 
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -18,6 +20,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/team")
 @RequiredArgsConstructor
 @Tag(name = "Team Management", description = "Manage team documents and members")
+@ApiResponses(value = {
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "400", description = "Bad request, validation error, or missing parameter", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "404", description = "Requested team resource was not found", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "409", description = "Duplicate resource conflict", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class))),
+        @io.swagger.v3.oas.annotations.responses.ApiResponse(responseCode = "500", description = "Unable to process your request", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ApiResponse.class)))
+})
 public class TeamController {
 
     private final TeamService teamService;

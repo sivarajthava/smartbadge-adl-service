@@ -6,7 +6,7 @@
 
 ```
 com.smartbadge.adl
-├── StaffManagementApplication.java
+├── SmartBadgeApplication.java
 ├── shared/          [OPEN MODULE]  ApiResponse, GlobalExceptionHandler, OpenApiConfig
 ├── staff/           [MODULE]       Staff CRUD, Address management, Profile aggregation
 │   └── dto/         [INTERNAL]    CreateStaffRequest, UpdateStaffRequest
